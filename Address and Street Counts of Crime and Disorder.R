@@ -68,10 +68,10 @@ Add_CRM_2014<-aggregate(cbind(PrivateNeglect,PublicDenig)~Land_Parcel_ID,data=CR
 names(Add_CRM_2014)[2:3]<-paste(names(Add_CRM_2014)[2:3],'2014',sep='_')
 Add_CRM_2015<-aggregate(cbind(PrivateNeglect,PublicDenig)~Land_Parcel_ID,data=CRM_2015,sum)
 names(Add_CRM_2015)[2:3]<-paste(names(Add_CRM_2015)[2:3],'2015',sep='_')
-Add_CRM<-merge(Add_CRM_2011,Add_CRM_2012,by='Land_Parcel_ID',all.x.y=TRUE)
-Add_CRM<-merge(Add_CRM,Add_CRM_2013,by='Land_Parcel_ID',all.x.y=TRUE)
-Add_CRM<-merge(Add_CRM,Add_CRM_2014,by='Land_Parcel_ID',all.x.y=TRUE)
-Add_CRM<-merge(Add_CRM,Add_CRM_2015,by='Land_Parcel_ID',all.x.y=TRUE)
+Add_CRM<-merge(Add_CRM_2011,Add_CRM_2012,by='Land_Parcel_ID',all=TRUE)
+Add_CRM<-merge(Add_CRM,Add_CRM_2013,by='Land_Parcel_ID',all=TRUE)
+Add_CRM<-merge(Add_CRM,Add_CRM_2014,by='Land_Parcel_ID',all=TRUE)
+Add_CRM<-merge(Add_CRM,Add_CRM_2015,by='Land_Parcel_ID',all=TRUE)
 
 Add_CAD_2011<-aggregate(cbind(SocDis,PrivateConflict,Violence,Guns)~Land_Parcel_ID,data=CAD_2011,sum)
 names(Add_CAD_2011)[2:5]<-paste(names(Add_CAD_2011)[2:5],'2011',sep='_')
@@ -79,8 +79,8 @@ Add_CAD_2012<-aggregate(cbind(SocDis,PrivateConflict,Violence,Guns)~Land_Parcel_
 names(Add_CAD_2012)[2:5]<-paste(names(Add_CAD_2012)[2:5],'2012',sep='_')
 Add_CAD_2013<-aggregate(cbind(SocDis,PrivateConflict,Violence,Guns)~Land_Parcel_ID,data=CAD_2013,sum)
 names(Add_CAD_2013)[2:5]<-paste(names(Add_CAD_2013)[2:5],'2013',sep='_')
-Add_CAD<-merge(Add_CAD_2011,Add_CAD_2012,by='Land_Parcel_ID',all.x.y=TRUE)
-Add_CAD<-merge(Add_CAD,Add_CAD_2013,by='Land_Parcel_ID',all.x.y=TRUE)
+Add_CAD<-merge(Add_CAD_2011,Add_CAD_2012,by='Land_Parcel_ID',all=TRUE)
+Add_CAD<-merge(Add_CAD,Add_CAD_2013,by='Land_Parcel_ID',all=TRUE)
 
 
 
